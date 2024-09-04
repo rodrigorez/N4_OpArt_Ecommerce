@@ -1,4 +1,4 @@
-# grupo4N_ecommerce
+# 4N_Cubismo_Ecommerce
 # Projeto
 
 Este Projeto foi criado para acompanhamento dos alunos da materia de Projeto em Design: Digital
