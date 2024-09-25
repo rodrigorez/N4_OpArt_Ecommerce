@@ -1,28 +1,271 @@
 <!DOCTYPE html>
- <html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opart E-commerce</title>
+    <style>
+        body {
+            font-family: inter, sans-serif;
+            margin: 60;
+            padding: 60;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    <img src="https://i.imgur.com/5zJAssK.gif" alt="head op art" width="1980" height="1020">
-    <h1 style="text-align:center; font-size:600%;">OPART</h1>
-    <p><button>começar</button></p>
+        .header {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #000;
+        }
+
+        .button {
+            background-color: #F02Fed;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .nav-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            gap: 10px;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #000;
+            padding: 7px 45px;
+            border-radius: 8px;
+        }
+
+        .nav-bar a {
+            color: #F02Fed;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .mainbox {
+            display: flex;
+            align-items: center;
+            background-color: #000;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .iconContainer {
+            padding: 0 8px;
+        }
+
+        .search_icon {
+            fill: #fff;
+        }
+
+        .search_input {
+            border: none;
+            outline: none;
+            background: none;
+            color: #fff;
+        }
+
+        .product-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .product-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 190px;
+            height: 254px;
+            border-radius: 20px;
+            background: #f5f5f5;
+            position: relative;
+            padding: 1.8rem;
+            border: 2px solid #ffffff;
+            transition: 0.5s ease-out;
+            overflow: visible;
+        }
+
+        .large-card {
+            width: 680px; /* Aumentar a largura para criar destaque */
+            height: 254px;
+            border-radius: 20px;
+            background: #f5f5f5;
+            position: relative;
+            padding: 1.8rem;
+            border: 2px solid #ffffff;
+            transition: 0.5s ease-out;
+            overflow: visible;
+        }
+
+        .card-details {
+            color: black;
+            height: 100%;
+            gap: 0.5em;
+            display: grid;
+            place-content: center;
+        }
+
+        .card-button {
+            transform: translate(-50%, 125%);
+            width: 60%;
+            border-radius: 1rem;
+            border: none;
+            background-color: #F02Fed;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            opacity: 0;
+            transition: 0.3s ease-out;
+        }
+
+        .text-body {
+            color: rgb(134, 134, 134);
+        }
+
+        .text-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            border-color: #F02Fed;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover .card-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #F02Fed;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
 
-    <!--navegação-->
-    <p><button>ofertas</button>
-    <button>vender</button>
-    <button>mais vendidos</button>
-    <button>novidades</button>
-    <button>eletrónicos</button></p>
+    <header class="header">
+        <h1>OPART</h1>
+        <button class="button">COMPRE AGORA</button>
+    </header>
 
-    <!--produtos-->
-    <p><img src="https://i.imgur.com/Md1rmEV.jpeg" alt="" width="15%">
-    <img src="https://i.imgur.com/6jkbG7G.jpeg" alt="" width="15%">
-    <img src="https://i.imgur.com/9YNFLgd.jpeg" alt="" width="15%"></p>
+    <div class="nav-bar-container">
+        <nav class="nav-bar">
+            <a href="#">Destaques</a>
+            <a href="#">Vendas</a>
+            <a href="#">Mais Vendidos</a>
+            <a href="#">Novidades</a>
+            <a href="#">Eletrônicos</a>
+        </nav>
 
-    <!--aqui carrosel-->
+        <!-- Botão de Busca -->
+        <div class="container">
+            <div class="mainbox">
+                <div class="iconContainer">
+                    <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                    </svg>
+                </div>
+                <input class="search_input" placeholder="search" type="text">
+            </div>
+        </div>
+    </div>
+
+    <section class="product-section">
+        <!-- Linha com os três cards pequenos -->
+        <div class="product-row">
+            <div class="card">
+                <div class="card-details">
+                    <p class="text-title">Camiseta Opart</p>
+                    <p class="text-body">Design único e moderno inspirado na arte.</p>
+                </div>
+                <button class="card-button">Ver Mais</button>
+            </div>
+            <div class="card">
+                <div class="card-details">
+                    <p class="text-title">Camiseta Minimalista</p>
+                    <p class="text-body">Estilo clean e sofisticado para o dia a dia.</p>
+                </div>
+                <button class="card-button">Ver Mais</button>
+            </div>
+            <div class="card">
+                <div class="card-details">
+                    <p class="text-title">Camiseta Tech</p>
+                    <p class="text-body">Conforto e inovação com tecidos tecnológicos.</p>
+                </div>
+                <button class="card-button">Ver Mais</button>
+            </div>
+        </div>
+
+        <!-- Card grande abaixo dos outros três -->
+        <div class="large-card">
+            <div class="card-details">
+                <p class="text-title">Coleção Exclusiva</p>
+                <p class="text-body">Descubra nossa nova linha com designs inovadores e estilos únicos.</p>
+            </div>
+            <button class="card-button">Saiba Mais</button>
+        </div>
+    </section>
+
+    <section class="carousel">
+        <img src="camiseta-opart.jpg" alt="Camiseta Opart">
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Opart - Todos os direitos reservados.</p>
+    </footer>
+
 </body>
-<footer>
-    <!--redes sociais etc.-->
-</footer>
- </html>
+</html>
