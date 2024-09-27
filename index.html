@@ -5,89 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opart E-commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- Fonte Anton -->
     <style>
         body {
-            font-family: inter, sans-serif;
-            margin: 60;
-            padding: 60;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
             color: #333;
         }
 
         .header {
-            background-color: #fff;
-            padding: 40px;
+            padding: 10% 0;
             text-align: center;
             border-bottom: 1px solid #ddd;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 10em;
             color: #000;
+            font-family: 'Anton', sans-serif;
         }
 
         .button {
             background-color: #F02Fed;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 1em 2em;
             margin-top: 10px;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 50px;
             text-transform: uppercase;
             font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d2006b;
         }
 
         .nav-bar-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 10px 0;
-            gap: 10px;
+            padding: 15px 20px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .nav-bar {
             display: flex;
             justify-content: space-around;
             background-color: #000;
-            padding: 7px 45px;
+            padding: 10px;
             border-radius: 8px;
+            width: 100%;
         }
 
         .nav-bar a {
             color: #F02Fed;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 8px;
+            transition: background-color 0.3s;
         }
 
-        .container {
-            display: flex;
-            align-items: center;
-        }
-
-        .mainbox {
-            display: flex;
-            align-items: center;
-            background-color: #000;
-            padding: 5px;
-            border-radius: 8px;
-        }
-
-        .iconContainer {
-            padding: 0 8px;
-        }
-
-        .search_icon {
-            fill: #fff;
-        }
-
-        .search_input {
-            border: none;
-            outline: none;
-            background: none;
-            color: #fff;
+        .nav-bar a:hover {
+            background-color: rgba(240, 47, 237, 0.2);
         }
 
         .product-section {
@@ -95,17 +80,20 @@
             flex-direction: column;
             align-items: center;
             gap: 30px;
-            padding: 20px;
+            padding: 5% 0;
         }
 
         .product-row {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
+            padding: 0 5%;
         }
 
-        .card {
-            width: 190px;
-            height: 254px;
+        .card, .large-card {
+            width: 100%;
+            max-width: 680px;
             border-radius: 20px;
             background: #f5f5f5;
             position: relative;
@@ -115,16 +103,11 @@
             overflow: visible;
         }
 
-        .large-card {
-            width: 680px; /* Aumentar a largura para criar destaque */
-            height: 254px;
-            border-radius: 20px;
-            background: #f5f5f5;
-            position: relative;
-            padding: 1.8rem;
-            border: 2px solid #ffffff;
-            transition: 0.5s ease-out;
-            overflow: visible;
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem; /* Espaçamento abaixo da imagem */
         }
 
         .card-details {
@@ -137,7 +120,7 @@
 
         .card-button {
             transform: translate(-50%, 125%);
-            width: 60%;
+            width: 100%;
             border-radius: 1rem;
             border: none;
             background-color: #F02Fed;
@@ -192,22 +175,119 @@
             max-width: 100%;
             border-radius: 8px;
         }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3em;
+            }
+
+            .button {
+                padding: 0.5em 1em;
+            }
+
+            .text-title {
+                font-size: 1.2em;
+            }
+
+            .card, .large-card {
+                max-width: 90%;
+            }
+        }
+
+        .rodape {
+            background-color: #F02Fed;
+            color: white;
+            height: auto;
+            width: 100%;
+            font-size: 14px;
+            font-family: helvetica;
+        }
+
+        .rodape a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .rodape p {
+            margin-bottom: 5px;
+        }
+
+        .rodape-div {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: auto;
+            align-items: stretch;
+            padding: 60px 10px 40px 10px;
+        }
+
+        .rodape-div-1,
+        .rodape-div-2,
+        .rodape-div-3,
+        .rodape-div-4 {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% / 4 - 20px);
+            padding: 10px;
+        }
+
+        .rodape span {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+
+        .rodape-direitos {
+            width: calc(100% - 20px);
+            background-color: black;
+            padding: 10px;
+            margin: 0px;
+            text-align: center;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .rodape-div {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .rodape-div-1,
+            .rodape-div-2,
+            .rodape-div-3,
+            .rodape-div-4 {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-<style>
-        body {
-            font-family: Anton, sans-serif;
-            margin: 60;
-            padding: 60;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+
+    <img src="https://i.pinimg.com/736x/94/97/24/949724afb351581112f0019cfdb777e9.jpg" alt="Op Art Background" style="width:100%;">
+
+    <!-- Cabeçalho -->
     <header class="header">
         <h1>OPART</h1>
-        <button class="button">COMPRE AGORA</button>
+        <button class="button">CRIE SUA CONTA</button>
     </header>
 
+    <!-- Navegação -->
     <div class="nav-bar-container">
         <nav class="nav-bar">
             <a href="#">Destaques</a>
@@ -216,63 +296,176 @@
             <a href="#">Novidades</a>
             <a href="#">Eletrônicos</a>
         </nav>
-
-        <!-- Botão de Busca -->
-        <div class="container">
-            <div class="mainbox">
-                <div class="iconContainer">
-                    <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
-                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
-                    </svg>
-                </div>
-                <input class="search_input" placeholder="search" type="text">
-            </div>
-        </div>
     </div>
 
+    <!-- Seção de Produtos -->
     <section class="product-section">
-        <!-- Linha com os três cards pequenos -->
         <div class="product-row">
             <div class="card">
+                <img src="https://i.pinimg.com/564x/54/82/af/5482af91e6e2d358a09610d9fb05e61a.jpg" alt="Camiseta Opart"> <!-- Imagem adicionada -->
                 <div class="card-details">
                     <p class="text-title">Camiseta Opart</p>
                     <p class="text-body">Design único e moderno inspirado na arte.</p>
                 </div>
-                <button class="card-button">Ver Mais</button>
+                <button class="card-button">45,00 R$ | Ver mais</button>
             </div>
             <div class="card">
+                <img src="https://i.pinimg.com/564x/5e/17/8a/5e178a43693dd1cf46b3f075586a8e5f.jpg" alt="Camiseta Minimalista"> <!-- Imagem adicionada -->
                 <div class="card-details">
                     <p class="text-title">Camiseta Minimalista</p>
                     <p class="text-body">Estilo clean e sofisticado para o dia a dia.</p>
                 </div>
-                <button class="card-button">Ver Mais</button>
+                <button class="card-button"> 80,00 R$ | Ver mais </button>
             </div>
+
             <div class="card">
+                <img src="https://i.pinimg.com/564x/5b/a4/90/5ba4909423d033574fceb14966233318.jpg" alt="Camiseta Opart"> <!-- Imagem adicionada -->
                 <div class="card-details">
                     <p class="text-title">Camiseta Tech</p>
                     <p class="text-body">Conforto e inovação com tecidos tecnológicos.</p>
                 </div>
-                <button class="card-button">Ver Mais</button>
+                <button class="card-button"> 65,00 R$ | Ver mais </button>
             </div>
         </div>
 
-        <!-- Card grande abaixo dos outros três -->
-        <div class="large-card">
+        <div class="card">
+        <img src="https://i.pinimg.com/736x/60/ef/1d/60ef1d66df9c0f39aa1dffbdfc5ee3f8.jpg" alt="Camiseta Opart"> 
+        <!-- Imagem adicionada -->
             <div class="card-details">
-                <p class="text-title">Coleção Exclusiva</p>
-                <p class="text-body">Descubra nossa nova linha com designs inovadores e estilos únicos.</p>
+                <p class="text-title"> Alerta Spoiler | Coleção Exclusiva</p>
+                <p class="text-body">Em breve, descubra nossa nova linha com designs inovadores e estilos únicos.</p>
             </div>
             <button class="card-button">Saiba Mais</button>
         </div>
     </section>
 
-    <section class="carousel">
-        <img src="camiseta-opart.jpg" alt="Camiseta Opart">
-    </section>
+    <!-- Rodapé -->
+<footer class="rodape">
+    <div class="rodape-div">
+        <div class="rodape-div-1">
+            <div>
+                <span>Sobre Nós</span>
+                <p>O Opart E-commerce é uma loja online dedicada a camisetas inspiradas no movimento Op Art, oferecendo peças únicas que unem arte e moda.</p>
+            </div>
+        </div>
+        <div class="rodape-div-2">
+            <div>
+                <span>Links Úteis</span>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rodape-div-3">
+            <div>
+                <span>Contato</span>
+                <p>Email: suporte@opart.com</p>
+                <p>Telefone: (11) 99999-9999</p>
+                <p>Endereço: Rua da Arte, 123 - São Paulo, SP</p>
+            </div>
+        </div>
+        <div class="rodape-div-4">
+            <div>
+                <span>Siga-nos</span>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.pinimg.com/474x/17/7d/93/177d936876ccb9f9d08e2ab72ea20bd8.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="https://i.pinimg.com/736x/41/d8/49/41d84959061bb8b0ddecf37f2a552a25.jpg" alt="WhatsApp"></a>
+                    <a href="https://twitter.com/"><img src="https://www.shareicon.net/data/128x128/2017/01/24/875988_media_512x512.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rodape-direitos">
+        <p>&copy; 2024 Opart E-commerce. Todos os direitos reservados.</p>
+    </div>
+</footer>
 
-    <footer class="footer">
-        <p>© 2024 Opart - Todos os direitos reservados.</p>
-    </footer>
+<style>
+    .rodape {
+        background-color: #F02Fed;
+        color: white;
+        height: auto;
+        width: 100%;
+        font-size: 14px;
+        font-family: INTER;
+    }
 
+    .rodape a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .rodape p {
+        margin-bottom: 5px;
+    }
+
+    .rodape-div {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: auto;
+        align-items: stretch;
+        padding: 60px 10px 40px 10px;
+    }
+
+    .rodape-div-1,
+    .rodape-div-2,
+    .rodape-div-3,
+    .rodape-div-4 {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% / 4 - 20px);
+        padding: 10px;
+    }
+
+    .rodape span {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-icons a img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s;
+    }
+
+    .social-icons a:hover img {
+        transform: scale(1.2);
+    }
+
+    .rodape-direitos {
+        width: calc(100% - 20px);
+        background-color: black;
+        padding: 10px;
+        margin: 0px;
+        text-align: center;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .rodape-div {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rodape-div-1,
+        .rodape-div-2,
+        .rodape-div-3,
+        .rodape-div-4 {
+            width: 100%;
+        }
+    }
+</style>
 </body>
 </html>
+
