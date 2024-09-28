@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,12 +52,12 @@
             align-items: center;
             padding: 15px 20px;
             width: 100%;
-            max-width: 100%;
         }
 
         .nav-bar {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
             background-color: #000;
             padding: 10px;
             border-radius: 8px;
@@ -75,6 +76,11 @@
             background-color: rgba(240, 47, 237, 0.2);
         }
 
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
         .product-section {
             display: flex;
             flex-direction: column;
@@ -91,9 +97,9 @@
             padding: 0 5%;
         }
 
-        .card, .large-card {
+        .card {
             width: 100%;
-            max-width: 680px;
+            max-width: 300px;
             border-radius: 20px;
             background: #f5f5f5;
             position: relative;
@@ -107,7 +113,7 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 1rem; /* Espaçamento abaixo da imagem */
+            margin-bottom: 1rem;
         }
 
         .card-details {
@@ -134,15 +140,6 @@
             transition: 0.3s ease-out;
         }
 
-        .text-body {
-            color: rgb(134, 134, 134);
-        }
-
-        .text-title {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
         .card:hover {
             border-color: #F02Fed;
             box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
@@ -162,54 +159,16 @@
             margin-top: 20px;
         }
 
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            border-radius: 8px;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        .carousel img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 3em;
-            }
-
-            .button {
-                padding: 0.5em 1em;
-            }
-
-            .text-title {
-                font-size: 1.2em;
-            }
-
-            .card, .large-card {
-                max-width: 90%;
-            }
-        }
-
         .rodape {
             background-color: #F02Fed;
             color: white;
-            height: auto;
-            width: 100%;
             font-size: 14px;
-            font-family: inter;
+            width: 100%;
         }
 
         .rodape a {
             text-decoration: none;
             color: white;
-        }
-
-        .rodape p {
-            margin-bottom: 5px;
         }
 
         .rodape-div {
@@ -257,12 +216,27 @@
             width: calc(100% - 20px);
             background-color: black;
             padding: 10px;
-            margin: 0px;
             text-align: center;
             color: white;
         }
 
         @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3em;
+            }
+
+            .button {
+                padding: 0.5em 1em;
+            }
+
+            .text-title {
+                font-size: 1.2em;
+            }
+
+            .card {
+                max-width: 90%;
+            }
+
             .rodape-div {
                 flex-direction: column;
                 align-items: center;
@@ -277,8 +251,8 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <img src="https://i.pinimg.com/736x/94/97/24/949724afb351581112f0019cfdb777e9.jpg" alt="Op Art Background" style="width:100%;">
 
     <!-- Cabeçalho -->
@@ -290,11 +264,11 @@
    <!-- Navegação -->
 <div class="nav-bar-container">
     <nav class="nav-bar">
-        <a href="#">Destaques</a>
-        <a href="#">Vendas</a>
-        <a href="#">Mais Vendidos</a>
-        <a href="#">Novidades</a>
-        <a href="#">Eletrônicos</a>
+        <a href="#">DESTAQUE</a>
+        <a href="#">VENDAS</a>
+        <a href="#">MAIS VENDIDOS</a>
+        <a href="#">NOVIDADES</a>
+        <a href="#">ELETRÔNICOS</a>
         
         <!-- Botões de Pesquisa e Ações -->
         <div class="button-container">
@@ -378,42 +352,50 @@
 </style>
 
 
-    <!-- Seção de Produtos -->
+  <!-- Seção de Produtos -->
     <section class="product-section">
         <div class="product-row">
             <div class="card">
-                <img src="https://i.pinimg.com/564x/54/82/af/5482af91e6e2d358a09610d9fb05e61a.jpg" alt="Camiseta Opart"> <!-- Imagem adicionada -->
+                <img src="https://i.pinimg.com/564x/54/82/af/5482af91e6e2d358a09610d9fb05e61a.jpg" alt="Camiseta Opart">
                 <button class="card-button">45,00 R$ | Ver mais</button>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/564x/5e/17/8a/5e178a43693dd1cf46b3f075586a8e5f.jpg" alt="Camiseta Minimalista"> <!-- Imagem adicionada -->
-                <button class="card-button"> 80,00 R$ | Ver mais </button>
+                <img src="https://i.pinimg.com/564x/5e/17/8a/5e178a43693dd1cf46b3f075586a8e5f.jpg" alt="Camiseta Minimalista">
+                <button class="card-button">80,00 R$ | Ver mais</button>
             </div>
-
             <div class="card">
-                <img src="https://i.pinimg.com/564x/5b/a4/90/5ba4909423d033574fceb14966233318.jpg" alt="Camiseta Opart"> <!-- Imagem adicionada -->
-                <button class="card-button"> 65,00 R$ | Ver mais </button>
+                <img src="https://i.pinimg.com/564x/5b/a4/90/5ba4909423d033574fceb14966233318.jpg" alt="Camiseta Opart">
+                <button class="card-button">65,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/5d/a8/00/5da80032ec0e78ba0ef2b2650550a10f.jpg" alt="Camiseta Opart">
+                <button class="card-button">70,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/2a/f0/cc/2af0cc3ba3f50816c5863a497be0737e.jpg" alt="Camiseta Opart">
+                <button class="card-button">95,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/8f/43/24/8f43249e9e659c2e6134f80e83fd1bc9.jpg" alt="Camiseta Opart">
+                <button class="card-button">100,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/11/2c/8d/112c8d074d3de5bc1850d8a574729e65.jpg" alt="Camiseta Opart">
+                <button class="card-button">50,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/69/b3/2e/69b32ee6eb058102f8ace0a7341bd776.jpg" alt="Camiseta Opart">
+                <button class="card-button">55,00 R$ | Ver mais</button>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/b9/9f/9f/b99f9f0911d7d8e1f80ca2b674ac4d7b.jpg" alt="Camiseta Opart">
+                 <button class="card-button">55,00 R$ | Ver mais</button>
+                </div>
+                <button class="card-button">Saiba Mais</button>
             </div>
         </div>
-        
-        <div class="card">
-                <img src="https://i.pinimg.com/564x/2a/f0/cc/2af0cc3ba3f50816c5863a497be0737e.jpg" alt="Camiseta Opart"> <!-- Imagem adicionada -->
-                <button class="card-button"> 95,00 R$ | Ver mais </button>
-            </div>
-        </div>
-
-        <div class="card">
-        <img src="https://i.pinimg.com/736x/60/ef/1d/60ef1d66df9c0f39aa1dffbdfc5ee3f8.jpg" alt="Camiseta Opart"> 
-        <!-- Imagem adicionada -->
-            <div class="card-details">
-                <p class="text-title"> Alerta Spoiler | Coleção Exclusiva</p>
-                <p class="text-body">Em breve, descubra nossa nova linha com designs inovadores e estilos únicos.</p>
-            </div>
-            <button class="card-button">Saiba Mais</button>
-        </div>
-        
-        
     </section>
+
 
     <!-- Rodapé -->
 <footer class="rodape">
@@ -543,4 +525,6 @@
     }
 </style>
 </body>
+</html>
+
 </html>
